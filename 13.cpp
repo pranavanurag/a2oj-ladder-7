@@ -41,19 +41,18 @@ int main() {
 	for (int i = 1; i <= n; i++)
 		cin>>a[i];
 
-	if (n == 1) {
-		cout<<1<<endl;
-		return 0;
-	}
-
 	for (int i = 1; i <= n; i++) {
 		int curr = a[i];
 		for (int el: prime_factors(curr))
 			dp[i] = max(dp[i], d[el] + 1);
 		for (int el: prime_factors(curr))
-			d[el] = dp[i];
+			d[el] = max(d[el], dp[i]);
 	}
 
-	cout<<dp[n]<<endl;
+	int ans = 1;
+	for (int i = 1; i <= n; i++)
+		ans = max(ans, dp[i]);
+
+	cout<<ans<<endl;
 	return 0;
 }
