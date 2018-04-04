@@ -20,15 +20,6 @@ void sort_column(int col) {
 	}
 }
 
-void show(vector <vector <int> > x) {
-	int n = x.size(), m = x[0].size();
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++)
-			cout<<x[i][j]<<" ";
-		cout<<endl;
-	}
-}
-
 int main() {
 	ios::sync_with_stdio(0);
 
