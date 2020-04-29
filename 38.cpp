@@ -40,7 +40,6 @@ bool check_connectivity(int color) {
 }
 
 vector <vector <int>> d;
-
 void print_d() {
     for (int i = 1; i <= k; i++) {
         for (int j = 1; j <= k; j++) {
@@ -53,6 +52,7 @@ void print_d() {
         cout << endl;
     }
 }
+
 void calc() {
     d.resize(k + 1);
     for (int i = 1; i <= k; i++) d[i].resize(k + 1, INF);
@@ -118,6 +118,7 @@ void accept() {
 }
 
 int main() {
+	ios::sync_with_stdio(0);
     accept();
     solve();
     return 0;
