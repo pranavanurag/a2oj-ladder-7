@@ -9,22 +9,10 @@ void solve() {
     if (m == 1)  {
         cout << n << "\n";
     } else if (m == 2) {
-        if (n < 4) {
-            cout << 4 << "\n";
-        } else {
-            int rem = n % 4;
-            if (rem == 0) {
-                cout << n << "\n";
-            }
-            else {
-                int whole = (n / 4) * 4;
-                if (rem == 1) {
-                    cout << whole + 2 << "\n";
-                } else {
-                    cout << whole + 4 << "\n";
-                }
-            }
-        }
+        n = max(n, 4);
+        int rem = n % 4;
+        if (rem == 0) cout << n << "\n";
+        else cout << ((n / 4) * 4 + ((rem == 1) ? 2 : 4)) << "\n";
     } else {
         cout << (n * m + 1) / 2 << "\n";
     }
